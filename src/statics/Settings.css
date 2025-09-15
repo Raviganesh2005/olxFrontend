@@ -1,0 +1,47 @@
+.settings-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.profile-section {
+    cursor: pointer;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #0d6efd;
+}
+
+.profile-details {
+    transition: all 0.3s ease;
+}
+
+.section-header {
+    cursor: pointer;
+    padding: 0.5rem 0;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.toggle-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    user-select: none;
+}
+
+.list-group-item {
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+.list-group-item:hover {
+    background-color: #f1f1f1;
+}
+
+.btn-lg {
+    width: 100%;
+}

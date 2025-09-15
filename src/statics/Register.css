@@ -1,0 +1,59 @@
+/* Page background */
+.register-page {
+    background: linear-gradient(135deg, #ffede0, #fff);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card */
+.register-card {
+    width: 100%;
+    max-width: 650px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.text-orange {
+    color: #ff6600;
+}
+
+/* Input fields */
+.register-card .form-control,
+.register-card .form-select,
+.register-card textarea {
+    border-radius: 12px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease-in-out;
+}
+
+.register-card .form-control:focus,
+.register-card .form-select:focus,
+.register-card textarea:focus {
+    border-color: #ff6600;
+    box-shadow: 0 0 6px rgba(255, 102, 0, 0.3);
+}
+
+/* Button */
+.btn-orange {
+    background-color: #ff6600;
+    border: none;
+    border-radius: 50px;
+    padding: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    transition: 0.3s ease;
+}
+
+.btn-orange:hover {
+    background-color: #e65c00;
+}
+
+/* Labels */
+.register-card .form-label {
+    font-weight: 600;
+    color: #444;
+}

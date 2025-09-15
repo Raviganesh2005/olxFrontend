@@ -1,0 +1,29 @@
+.category-container {
+    background: #f8f9fa;
+}
+
+.category-card {
+    max-width: 600px;
+    width: 100%;
+}
+
+.input-group .form-control {
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.input-group .btn {
+    background: #007bff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.input-group .btn:hover {
+    background: #0056b3;
+}
+
+.list-group-item {
+    font-size: 15px;
+    padding: 10px 15px;
+}

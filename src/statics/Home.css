@@ -1,0 +1,105 @@
+/* Body and general spacing */
+body {
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .btn {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.8rem;
+}
+
+/* Category buttons */
+.d-flex.gap-2 {
+    flex-wrap: wrap;
+}
+
+.d-flex.gap-2 button {
+    margin-bottom: 0.3rem;
+}
+
+/* Product card styling */
+.card {
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Product image */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* No image placeholder */
+.bg-secondary {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Card body */
+.card-body h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-body p {
+    font-size: 0.9rem;
+}
+
+.card-body .btn {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+/* Category title */
+h4.mb-3 {
+    border-left: 4px solid #0d6efd;
+    padding-left: 10px;
+    font-weight: 600;
+}
+
+/* More button */
+.text-center .btn-outline-dark {
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .card-img-top,
+    .bg-secondary {
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar .btn {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .card-img-top,
+    .bg-secondary {
+        height: 120px;
+    }
+}
