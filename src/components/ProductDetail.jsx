@@ -14,7 +14,7 @@ function ProductDetail() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/product/${id}`, {
+        const res = await fetch(`https://olxbackend-0mmr.onrender.com/product/${id}`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -41,7 +41,7 @@ function ProductDetail() {
   useEffect(() => {
     const checkBook = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/product/checkBook/${id}`, {
+        const res = await fetch(`https://olxbackend-0mmr.onrender.com/product/checkBook/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -62,7 +62,7 @@ function ProductDetail() {
 
   const handleBook = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/product/book/${id}`, {
+      const res = await fetch(`https://olxbackend-0mmr.onrender.com/product/book/${id}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,

@@ -26,7 +26,7 @@ function Login({ setToken }) {
     event.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:3000/login", {
+      const res = await fetch("https://olxbackend-0mmr.onrender.com/login", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

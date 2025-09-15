@@ -20,7 +20,7 @@ function Chating() {
     const fetchChat = async () => {
       try {
         const res = await fetch(
-          `http://localhost:3000/message/${userId}/${sellerId}`,
+          `https://olxbackend-0mmr.onrender.com/message/${userId}/${sellerId}`,
           {
             headers: {
               "Authorization": `Bearer ${localStorage.getItem("token")}`,
@@ -88,7 +88,7 @@ function Chating() {
       const formData = new FormData();
       formData.append("image", selectedImage);
 
-      const res = await fetch("http://localhost:3000/message/imageUpload", {
+      const res = await fetch("https://olxbackend-0mmr.onrender.com/message/imageUpload", {
         method: "POST",
         headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` },
         body: formData,
@@ -97,7 +97,7 @@ function Chating() {
       const response = await res.json(); 
       console.log(response);
       
-      const imageUrl = `http://localhost:3000/productSell/image/${response.imageId}`;
+      const imageUrl = `https://olxbackend-0mmr.onrender.com/productSell/image/${response.imageId}`;
 
       socket.emit("privateMessage", { receiver: sellerId, msg: "", imageUrl });
 

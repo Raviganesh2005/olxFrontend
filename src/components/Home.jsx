@@ -10,7 +10,7 @@ function Home({ token }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/catagories")
+    fetch("https://olxbackend-0mmr.onrender.com/catagories")
       .then((res) => res.json())
       .then((data) => setCatagories(data))
       .catch((err) => console.error(err));
@@ -19,7 +19,7 @@ function Home({ token }) {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("http://localhost:3000/productSell");
+        const res = await fetch("https://olxbackend-0mmr.onrender.com/productSell");
         const data = await res.json();
 
         if (res.ok) {
