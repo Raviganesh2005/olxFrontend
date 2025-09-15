@@ -129,7 +129,7 @@ function ProductDetail() {
               <img
                 src={
                   data.seller.profile?.image
-                    ? `http://localhost:3000/${data.seller.profile.image}`
+                    ? `https://olxbackend-0mmr.onrender.com/${data.seller.profile.image}`
                     : "https://via.placeholder.com/80"
                 }
                 alt={data.seller.username}
