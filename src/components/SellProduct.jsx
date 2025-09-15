@@ -23,7 +23,7 @@ function SellProduct() {
   const [err, setErr] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/catagories")
+    fetch("https://olxbackend-0mmr.onrender.com/catagories")
       .then((response) => response.json())
       .then((response) => setCatagory(response))
       .catch((error) => console.log(error));
@@ -61,7 +61,7 @@ function SellProduct() {
     });
 
     try {
-      const res = await fetch("http://localhost:3000/productSell", {
+      const res = await fetch("https://olxbackend-0mmr.onrender.com/productSell", {
         method: "post",
         headers:{"Authorization":`Bearer ${localStorage.getItem("token")}`},
         body: formData,

@@ -18,7 +18,7 @@ function Products({location,productName}) {
     const fetchProducts = async () => {
       try {
         const res = await fetch(
-          `http://localhost:3000/productSell/category/${id}`,
+          `https://olxbackend-0mmr.onrender.com/productSell/category/${id}`,
           {
             method: "get",
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },

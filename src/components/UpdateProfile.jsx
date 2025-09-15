@@ -29,7 +29,7 @@ const states = [
 
   
   useEffect(() => {
-      fetch("http://localhost:3000/update", {
+      fetch("https://olxbackend-0mmr.onrender.com/update", {
         method:"get",
         headers: {
         "Authorization": `Bearer ${localStorage.getItem("token")}`, 
@@ -88,7 +88,7 @@ const states = [
         formData.append(item, data[item]);
       });
 
-      fetch("http://localhost:3000/update", {
+      fetch("https://olxbackend-0mmr.onrender.com/update", {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`, 

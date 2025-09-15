@@ -86,7 +86,7 @@ function Register() {
         formData.append(item, data[item]);
       });
 
-      fetch("http://localhost:3000/register", {
+      fetch("https://olxbackend-0mmr.onrender.com/register", {
         method: "POST",
         body: formData,
       })

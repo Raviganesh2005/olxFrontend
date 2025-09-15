@@ -24,7 +24,7 @@ function Settings() {
   useEffect(() => {
     const fetchSettings = async () => {
       try {
-        const res = await fetch("http://localhost:3000/settings", {
+        const res = await fetch("https://olxbackend-0mmr.onrender.com/settings", {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -49,7 +49,7 @@ function Settings() {
 useEffect(() => {
   const fetchSoldout = async () => {
     try {
-      const res = await fetch("http://localhost:3000/settings/soldout", {
+      const res = await fetch("https://olxbackend-0mmr.onrender.com/settings/soldout", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -68,7 +68,7 @@ useEffect(() => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await fetch("http://localhost:3000/settings/sellStatus", {
+        const res = await fetch("https://olxbackend-0mmr.onrender.com/settings/sellStatus", {
           method: "get",
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -87,7 +87,7 @@ useEffect(() => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("http://localhost:3000/settings/sellUpload", {
+        const res = await fetch("https://olxbackend-0mmr.onrender.com/settings/sellUpload", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -105,7 +105,7 @@ useEffect(() => {
   const handleDelete = async (productId) => {
     try {
       const res = await fetch(
-        `http://localhost:3000/settings/product/${productId}`,
+        `https://olxbackend-0mmr.onrender.com/settings/product/${productId}`,
         {
           method: "DELETE",
           headers: {
@@ -124,7 +124,7 @@ useEffect(() => {
   useEffect(() => {
   const fetchBuying = async () => {
     try {
-      const res = await fetch("http://localhost:3000/settings/buying", {
+      const res = await fetch("https://olxbackend-0mmr.onrender.com/settings/buying", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -146,7 +146,7 @@ useEffect(() => {
 
   try {
     const res = await fetch(
-      `http://localhost:3000/settings/accept/${orderId}/${productId}`,
+      `https://olxbackend-0mmr.onrender.com/settings/accept/${orderId}/${productId}`,
       {
         method: "PUT",
         headers: {
@@ -164,7 +164,7 @@ useEffect(() => {
       setSoldout([...soldout, updatedOrder]);
 
       
-      const prodRes = await fetch("http://localhost:3000/settings/sellUpload", {
+      const prodRes = await fetch("https://olxbackend-0mmr.onrender.com/settings/sellUpload", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -189,7 +189,7 @@ useEffect(() => {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/settings/cancel/${orderId}`,
+        `https://olxbackend-0mmr.onrender.com/settings/cancel/${orderId}`,
         {
           method: "delete",
           headers: {
@@ -221,7 +221,7 @@ useEffect(() => {
   const location = profile?.address || data?.state;
   const role = data?.role || "user";
   const image = profile?.image
-    ? `http://localhost:3000/${profile.image}`
+    ? `https://olxbackend-0mmr.onrender.com/${profile.image}`
     : "https://via.placeholder.com/100";
   
   
