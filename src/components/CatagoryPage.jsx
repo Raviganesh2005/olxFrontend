@@ -12,7 +12,7 @@ function CategoryPage() {
   // Fetch categories
   const fetchCategories = async () => {
     try {
-        const res = await fetch("http://localhost:3000/catagories", {
+        const res = await fetch("https://olxbackend-0mmr.onrender.com/catagories", {
           
             method: "get",
             headers: { "Content-Type": "application/json" },
@@ -37,7 +37,7 @@ function CategoryPage() {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/catagories", {
+      const res = await fetch("https://olxbackend-0mmr.onrender.com/catagories", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
