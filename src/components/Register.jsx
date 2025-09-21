@@ -73,7 +73,7 @@ function Register() {
     }
     if (!data.image) {
       
-      newErrors.name = "Image is required"
+      newErrors.image = "Image is required"
     }
 
     setErrors(newErrors);
@@ -243,16 +243,19 @@ function Register() {
               )}
             </div>
 
-            {/* Image */}
             <div className="col-md-6">
               <label className="form-label">Profile Image</label>
               <input
                 type="file"
-                className="form-control"
+                className={`form-control ${errors.image ? "is-invalid" : ""}`}
                 name="image"
                 onChange={handleChange}
               />
+              {errors.image && (
+                <div className="invalid-feedback">{errors.image}</div>
+              )}
             </div>
+
 
             {/* Address */}
             <div className="col-12">
