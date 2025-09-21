@@ -71,6 +71,10 @@ function Register() {
     if (!data.name) {
       newErrors.name = "Name is required.";
     }
+    if (!data.image) {
+      
+      newErrors.name = "Image is required"
+    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
