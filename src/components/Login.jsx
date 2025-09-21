@@ -3,27 +3,27 @@ import "../statics/Login.css";
 import { Link, useNavigate } from "react-router-dom";
 
 function Login({ setToken }) {
-  
-
   const [data, setData] = useState({
     username: "",
     password: "",
   });
 
+  const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setData((data) => {
-      return { ...data, [name]: value };
-    });
+    setData((data) => ({ ...data, [name]: value }));
   };
 
   const handleSubmit = async (event) => {
-
     event.preventDefault();
+    setLoading(true);
+    setError(null);
+    setResponse(null);
 
     try {
       const res = await fetch("https://olxbackend-0mmr.onrender.com/login", {
@@ -32,25 +32,30 @@ function Login({ setToken }) {
         body: JSON.stringify(data),
       });
 
-      const response = await res.json();
+      const result = await res.json();
 
       if (res.ok) {
-        localStorage.setItem("token", response.token);
-        localStorage.setItem("username", response.username);
-        localStorage.setItem("userId", response.id);
-        localStorage.setItem("role",response.role)
-        setToken(response.token)
-        setError(null);
-        navigate("/home")
-        
+        localStorage.setItem("token", result.token);
+        localStorage.setItem("username", result.username);
+        localStorage.setItem("userId", result.id);
+        localStorage.setItem("role", result.role);
+
+        setToken(result.token);
+        setResponse({ message: "✅ Logged in successfully!" });
+
+        // Give user a short success message before navigating
+        setTimeout(() => {
+          navigate("/home");
+        }, 800);
       } else {
-        setError(response);
+        setError({ error: result.error || result.message || "Login failed" });
       }
-    } catch (error) {
-      setError({ error: "Something went wrong" });
+    } catch (err) {
+      setError({ error: "⚠️ Something went wrong, try again later." });
+    } finally {
+      setLoading(false);
     }
   };
-
 
   return (
     <div className="login-page d-flex justify-content-center align-items-center min-vh-100 bg-light">
@@ -79,6 +84,7 @@ function Login({ setToken }) {
               placeholder="Enter your username"
               value={data.username}
               onChange={handleChange}
+              required
             />
           </div>
 
@@ -95,15 +101,29 @@ function Login({ setToken }) {
               placeholder="Enter your password"
               value={data.password}
               onChange={handleChange}
+              required
             />
           </div>
 
           {/* Login Button */}
-          <button type="submit" className="btn btn-primary w-100 mb-3">
-            Login
+          <button
+            type="submit"
+            className="btn btn-primary w-100 mb-3"
+            disabled={loading}
+          >
+            {loading ? (
+              <span>
+                <span className="spinner-border spinner-border-sm me-2"></span>
+                Logging in...
+              </span>
+            ) : (
+              "Login"
+            )}
           </button>
         </form>
 
+        {/* Messages */}
+        {response && <p className="text-success text-center">{response.message}</p>}
         {error && <p className="text-danger text-center">{error.error}</p>}
 
         {/* Register Link */}
