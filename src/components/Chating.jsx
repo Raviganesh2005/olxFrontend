@@ -49,7 +49,7 @@ function Chating() {
 
   // Setup socket
   useEffect(() => {
-    const newSocket = io("http://localhost:3000", {
+    const newSocket = io("https://olxbackend-0mmr.onrender.com", {
       path: "/chat",
       auth: { token: localStorage.getItem("token") },
     });
